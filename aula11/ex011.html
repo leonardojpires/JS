@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de País</title>
+</head>
+<body>
+    <h1>Qual é o teu país?</h1>
+    O teu país é: <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="identificar()">
+    <div id ="res">
+
+    </div>
+    <script>
+        function identificar() {
+            var txtp = window.document.querySelector("input#txtp");
+            var res = window.document.querySelector("div#res");
+            var país = txtp.value;
+            res.innerHTML = `<p>A viver em <strong>${país}</strong><p>`;
+            if (país != "Portugal") {
+                res.innerHTML += `<p>Tu és <strong>Estrangeiro</strong></p>`;
+            }
+            else {
+                res.innerHTML += `<p>Tu és <strong>Português</strong></p>`;
+            }
+        }
+    </script>
+</body>
+</html>
