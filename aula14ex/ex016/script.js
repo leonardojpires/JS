@@ -1,25 +1,38 @@
 function contar() {
-    var inicio = parseInt(document.getElementById("inicio").value);
-    var fim = parseInt(document.getElementById("fim").value);
-    var passo = parseInt(document.getElementById("passo").value);
+    var inicio = document.getElementById("inicio");
+    var fim = document.getElementById("fim");
+    var passo = document.getElementById("passo");
     var resp = document.querySelector("p#resp");
     var res = document.querySelector("p#res");
 
-    resp.innerHTML = "";
+    res.innerHTML = "";
 
-    if (!inicio || !fim || !passo || passo <= 0 && inicio > fim) {
+    if (inicio.value.length === 0 || fim.value.length === 0 || passo.value.length === 0) {
         resp.innerHTML = "[ERRO] Impossível de contar. Por favor, insere um número válido!";
         res.innerHTML = "";
     }
     else {
-        for (var i = inicio; i <= fim; i+= passo) {
-            resp.innerHTML = "Contagem pronta!";
-            res.innerHTML += i + " \uD83D\uDC49 ";
+        let ini = Number(inicio.value);
+        let f = Number(fim.value);
+        let p = Number(passo.value);
+        if (p <= 0) {
+            window.alert("Passo inválido! Considerando PASSO 1");
+            p = 1;
+        }
+        if (ini < f) {
+            // Contagem crescente
+            for (var i = ini; i <= f; i+= p) {
+                resp.innerHTML = "Contagem pronta!";
+                res.innerHTML += i + " \uD83D\uDC49 ";
+            }
+        }
+        else {
+            // Contagem regressiva
+            for (var i = ini; i >= f; i-= p) {
+                resp.innerHTML = "Contagem pronta!";
+                res.innerHTML += i + " \uD83D\uDC49 ";
+            }
         }
         res.innerHTML += "\uD83C\uDFC1";
     }
-
-
-
-
 }
