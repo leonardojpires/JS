@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(99, 219, 129);
 }
 
 main {
@@ -10,6 +10,8 @@ main {
     margin: 20px auto;
     padding: 2px;
     width: 500px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.384);
 }
 
 main h1 {
@@ -20,9 +22,30 @@ main h1 {
 
 main p {
     text-align: center;
+    font-size: 1.2em;
 }
 
 main input {
+    background-color: rgb(77, 92, 231);
+    border-color: rgb(77, 92, 231);
+    color: white;
     width: 200px;
     height: 50px;
+    border-radius: 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.397);
+}
+
+main input:hover {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-color: darkred;
+    transition-duration: 0.2s;
+}
+
+main img {
+    display: block;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
 }
